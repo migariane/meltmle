@@ -28,7 +28,7 @@ where:
 
 {pstd} 
 
-Classical epidemiological methods to control for confounding require making the assumption 
+Classical epidemiologic methods to control for confounding require making the assumption 
 that the effect measure is constant across levels of confounders included in the model. 
 Alternatively, James Robins in 1986 showed that using standardisation implemented through the 
 use of the G-formula allows obtaining a unconfounded marginal estimation of the causal average 
@@ -140,7 +140,7 @@ RR:   1.8575; 95%CI:(1.8020,1.9147)
 
 {pstd} 
 Remember 1: Y must be a binary numeric variable coded (0,1); X must be numeric binary
-variable and, Z a vector of covariates. 
+variable and, Z a vector of covaraites. 
 {p_end}
 
 {pstd} 
@@ -152,7 +152,7 @@ Remember 3: Mac users install meltmle.ado file.
 {p_end}
 
 {pstd} 
-Remember 4: Windows users install weltmle.ado file.
+Remember 4: Windows users intall weltmle.ado file.
 {p_end}
 
 {pstd} 
@@ -197,24 +197,28 @@ Van der Laan MJ, Polley EC, Hubbard AE. (2007). Super learner. Statistical appli
 in genetics and molecular biology 6.
 {p_end}
 
-{title:Authors}
+{title:Author and developer}
 
 {phang}Miguel Angel Luque-Fernandez{p_end}
 {phang}Department of Epidemiology and Population Health, London School of Hygiene and Tropical Medicine. 
-London, UK (Main author and developer){p_end}
-{phang}E-mail: {browse "mailto:miguel-angel.luque@lshtm.ac.uk":miguel-angel.luque@lshtm.ac.uk}{p_end}
+London, UK.{p_end}
 
+{title:Coauthors}
+{phang}E-mail: {browse "mailto:miguel-angel.luque@lshtm.ac.uk":miguel-angel.luque@lshtm.ac.uk}{p_end}
 {phang}Micheal Schomaker{p_end}
-{phang}Centre for Infectious Disease Epidemiology and Research, University of Cape Town, Cape Town, South Africa.{p_end}
+{phang}Centre for Infectious Disease Epidemiology and Reseaerch, Univeristy of Cape Town, Cape Town, South Afria.{p_end}
 {phang}E-mail: {browse "mailto:michael.schomaker@uct.ac.uk":michael.schomaker@uct.ac.uk}{p_end}
 
+{phang}karla Diaz-ordaz{p_end}
+{phang}Department of Medical Statistics, London School of Hygiene and Tropical Medicine.
+London, UK.{p_end}
+{phang}E-mail: {browse "mailto:karla.diaz-ordaz@lshtm.ac.uk":karla.diaz-ordaz@lshtm.ac.uk}{p_end}
+{title:Also see}
+
 {phang}Rhian Daniel{p_end}
-{phang}Department of Medical Statistics, London School of Hygiene and Tropical Medicine. 
-London, UK{p_end}
-{phang}E-mail: {browse "mailto:Rhian.daniel@lshtm.ac.uk":miguel-angel.luque@lshtm.ac.uk}{p_end}
-
-{phang}We would like to thank Karla Diaz-Ordaz for their comments and suggestions to improve the program{p_end}
-
+{phang}Department of Medical Statistics, London School of Hygiene and Tropical Medicine.
+London, UK.{p_end}
+{phang}E-mail: {browse "mailto:Rhian.daniel@lshtm.ac.uk":Rhian.daniel@lshtm.ac.uk}{p_end}
 {title:Also see}
 
 {psee}
