@@ -62,7 +62,7 @@ In case you have updates or changes that you would like to make, please send me 
 Alternatively, if you have any questions, please e-mail me.     
 You can cite this repository as:  
 Luque-Fernandez MA, (2017). Ensemble Taregeted Maximum Likelihood Estimation for a Binary Outcome and Treatment. 
-GitHub repository, https://github.com/migariane/STATA-TMLE      
+GitHub repository, https://github.com/migariane/weltmle (Windows users) or https://github.com/migariane/meltmle (MAC users)        
 Miguel Angel Luque-Fernandez    
 E-mail: miguel-angel.luque at lshtm.ac.uk  
 Twitter @WATZILEI  
