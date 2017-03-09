@@ -46,9 +46,9 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner”)”’ _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner”)"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
@@ -158,8 +158,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
@@ -269,12 +269,12 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner”,”gam”,”arm”)"' _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner","gam","arm")"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
-	`"library(gam)”’ _newline ///
+	`"library(gam)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
 	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
@@ -382,8 +382,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
@@ -484,8 +484,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
@@ -585,12 +585,12 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner”,”gam”,”arm”)"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner","gam","arm")"' _newline ///
     `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
-	`"library(gam)”’ _newline ///
+	`"library(gam)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
 	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
@@ -687,8 +687,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign")"' _newline ///
-        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
