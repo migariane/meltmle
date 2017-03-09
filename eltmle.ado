@@ -277,7 +277,7 @@ qui: file write rcode ///
 	`"library(gam)”’ _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.gam","SL.bayesglm")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
@@ -593,7 +593,7 @@ qui: file write rcode ///
 	`"library(gam)”’ _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.gam","SL.bayesglm")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
