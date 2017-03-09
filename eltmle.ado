@@ -16,7 +16,7 @@ program define eltmle
      local dir `c(pwd)'
 	 cd "`dir'"
 	 export delimited `var' using "data.csv", nolabel replace 
-	 if "`slaipw'" == "" & "`slaipwgbm'" == "" & "`slaipwbgam'" == "" & "`tmlegbm'" == "" & "`tmlebgam'" == "" & "`aipw'" == "" {
+	 if "`slaipw'" == "" & "`slaipwgbm'" == "" & "`slaipwbgam'" == "" & "`tmlegbm'" == "" & "`tmlebgam'" == "" & "`aipw'" == ""{
 		tmle `varlist'
 	 }
 	 else if "`tmlegbm'" == "tmlegbm" { 
@@ -26,7 +26,7 @@ program define eltmle
 		tmlebgam `varlist'
 	 }
 	 else if "`slaipw'" == "slaipw" { 
-	    slaipw `varlist'
+	 slaipw `varlist'
 	 }
 	 else if "`slaipwgbm'" == "slaipwgbm" {
 		slaipwgbm `varlist'
@@ -274,10 +274,9 @@ qui: file write rcode ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
-	`"library(gam)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.gam","SL.bayesglm")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
@@ -388,7 +387,7 @@ qui: file write rcode ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step", "SL.glm.interaction")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
@@ -590,10 +589,9 @@ qui: file write rcode ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
-	`"library(gam)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.bayesglm")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.bayesglm","SL.gam","SL.glm.interaction")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
@@ -610,7 +608,7 @@ qui: file write rcode ///
 	`"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
 	`"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
 	`"g <- SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = binomial(), method = "method.NNLS")"' _newline ///
-	`"ps <- g[[4]]"' _newline ///
+	`"ps <- g[[4]]"'  _newline ///
 	`"ps[ps<0.025] <- 0.025"' _newline ///
 	`"ps[ps>0.975] <- 0.975"' _newline ///
 	`"data <- cbind(data,QAW,Q1W,Q0W,ps,Y,A)"' _newline ///
@@ -666,7 +664,7 @@ global UCIr = exp(log($RRslaipwbg) +1.96*sqrt(($varICslaipwbg)/log($RRslaipwbg))
 
 di _newline
 di "AIPW Bayes GLM and GAM: Average Treatment Effect" _newline
-di "ATE:" %9.4f $ATEslaipwbg _col(5) "; SE:" %5.4f sqrt($varICslaipwbg) _col(5) "; pvalue:" %5.4f $pvalue _col(5) "; 95%CI:(" %8.6f $LCIa ","  %8.6f $UCIa ")"
+di "ATE:" %9.4f $ATEslaipwbg _col(5) "; SE:" %5.4f sqrt($varICslaipwbg) _col(5) "; p-value:" %5.4f $pvalue _col(5) "; 95%CI:(" %8.6f $LCIa ","  %8.6f $UCIa ")"
 
 di _newline
 di "AIPW Bayes GLM and GAM: Relative Risk" _newline 
