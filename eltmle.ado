@@ -26,7 +26,7 @@ program define eltmle
 		tmlebgam `varlist'
 	 }
 	 else if "`slaipw'" == "slaipw" { 
-	 slaipw `varlist'
+	        slaipw `varlist'
 	 }
 	 else if "`slaipwgbm'" == "slaipwgbm" {
 		slaipwgbm `varlist'
@@ -158,8 +158,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
-    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
@@ -270,8 +270,8 @@ qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
 	`"list.of.packages <- c("foreign","SuperLearner”,”gam”,”arm”)"' _newline ///
-    `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
-    `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
+        `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
+        `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
 	`"library(gam)”’ _newline ///
@@ -762,7 +762,7 @@ global UCIr =  exp(log($RR) +1.96*sqrt(($varIC)/log($RR)))
 
 di _newline
 di "AIPW: Average Treatment Effect" _newline
-di "ATE:" %9.4f $ATE _col(5) "; SE:" %5.4f sqrt($varIC) _col(5) "; p-value:" %5.4f $p-value _col(5) "; 95%CI:(" %8.6f $LCIa ","  %8.6f $UCIa ")"
+di "ATE:" %9.4f $ATE _col(5) "; SE:" %5.4f sqrt($varIC) _col(5) "; p-value:" %5.4f $pvalue _col(5) "; 95%CI:(" %8.6f $LCIa ","  %8.6f $UCIa ")"
 
 di _newline
 di "AIPW: Relative Risk" _newline 
