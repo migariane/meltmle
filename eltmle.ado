@@ -13,7 +13,7 @@ program define eltmle
      syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam aipw] 
 	 marksample touse
 	 local var `varlist' if `touse'
-         local dir `c(pwd)'
+     local dir `c(pwd)'
 	 cd "`dir'"
 	 export delimited `var' using "data.csv", nolabel replace 
 	 if "`slaipw'" == "" & "`slaipwgbm'" == "" & "`slaipwbgam'" == "" & "`tmlegbm'" == "" & "`tmlebgam'" == "" & "`aipw'" == "" {
@@ -26,7 +26,7 @@ program define eltmle
 		tmlebgam `varlist'
 	 }
 	 else if "`slaipw'" == "slaipw" { 
-	        slaipw `varlist'
+	    slaipw `varlist'
 	 }
 	 else if "`slaipwgbm'" == "slaipwgbm" {
 		slaipwgbm `varlist'
@@ -46,7 +46,7 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner”)"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
     `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
