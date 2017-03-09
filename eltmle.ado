@@ -46,7 +46,7 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner”)”’ _newline ///
     `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
@@ -269,11 +269,12 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner”,”gam”,”arm”)"' _newline ///
     `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
+	`"library(gam)”’ _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
 	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.gam","SL.bayesglm")"' _newline ///
@@ -584,14 +585,15 @@ qui: file close _all
 qui: file open rcode using SLS.R, write replace
 qui: file write rcode ///
 	`"set.seed(123)"' _newline ///
-	`"list.of.packages <- c("foreign","SuperLearner")"' _newline ///
+	`"list.of.packages <- c("foreign","SuperLearner”,”gam”,”arm”)"' _newline ///
     `"new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]"' _newline ///
     `"if(length(new.packages)) install.packages(new.packages)"' _newline ///
 	`"library(SuperLearner)"' _newline ///
 	`"library(foreign)"' _newline ///
+	`"library(gam)”’ _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step","SL.bayesglm","SL.gam","SL.glm.interaction")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction","SL.gam","SL.bayesglm")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
@@ -608,7 +610,7 @@ qui: file write rcode ///
 	`"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
 	`"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
 	`"g <- SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = binomial(), method = "method.NNLS")"' _newline ///
-	`"ps <- g[[4]]"'  _newline ///
+	`"ps <- g[[4]]"' _newline ///
 	`"ps[ps<0.025] <- 0.025"' _newline ///
 	`"ps[ps>0.975] <- 0.975"' _newline ///
 	`"data <- cbind(data,QAW,Q1W,Q0W,ps,Y,A)"' _newline ///
