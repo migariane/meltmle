@@ -388,7 +388,7 @@ qui: file write rcode ///
 	`"library(foreign)"' _newline ///
 	`"data <- read.csv("data.csv", sep=",")"' _newline ///
 	`"attach(data)"' _newline ///
-	`"SL.library <- c("SL.glm","SL.step", "SL.glm.interaction")"' _newline ///
+	`"SL.library <- c("SL.glm","SL.step","SL.glm.interaction")"' _newline ///
 	`"n <- nrow(data)"' _newline ///
 	`"nvar <- dim(data)[[2]]"' _newline ///
 	`"Y <- data[,1]"' _newline ///
