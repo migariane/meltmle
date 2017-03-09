@@ -13,10 +13,10 @@ program define eltmle
      syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam aipw] 
 	 marksample touse
 	 local var `varlist' if `touse'
-     local dir `c(pwd)'
+         local dir `c(pwd)'
 	 cd "`dir'"
 	 export delimited `var' using "data.csv", nolabel replace 
-	 if "`slaipw'" == "" & "`slaipwgbm'" == "" & "`slaipwbgam'" == "" & "`tmlegbm'" == "" & "`tmlebgam'" == "" & "`aipw'" == ""{
+	 if "`slaipw'" == "" & "`slaipwgbm'" == "" & "`slaipwbgam'" == "" & "`tmlegbm'" == "" & "`tmlebgam'" == "" & "`aipw'" == "" {
 		tmle `varlist'
 	 }
 	 else if "`tmlegbm'" == "tmlegbm" { 
