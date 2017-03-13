@@ -1,4 +1,4 @@
-*! version 1.5 Ensemble Learning Targeted Maximum Likelihodd by MALUQUE 05.APRIL.2017
+*! version 1.6 Ensemble Learning Targeted Maximum Likelihodd by MALUQUE 05.APRIL.2017
 ***************************************************************************
 **MIGUEL ANGEL LUQUE FERNANDEZ
 **TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OUTCOME AND TREATMENT 
