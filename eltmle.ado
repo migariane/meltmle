@@ -1,4 +1,4 @@
-*! version 1.6 Ensemble Learning Targeted Maximum Likelihood by MA.LUQUE 05.APRIL.2017
+*! version 1.7 Ensemble Learning Targeted Maximum Likelihood by MA.LUQUE 05.APRIL.2017
 ***************************************************************************
 **MIGUEL ANGEL LUQUE FERNANDEZ
 **TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OUTCOME AND TREATMENT 
@@ -145,6 +145,7 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv 
+quietly: rm .RData
 end
 
 ///////////////////////////////////////
@@ -256,7 +257,8 @@ di "RR:" %9.4f $RRtmlegbm _col(5) "; 95%CI:(" %6.4f $LCIr "," %6.4f $UCIr ")"
 quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
-quietly: rm data.csv 
+quietly: rm data.csv
+quietly: rm .RData 
 end
 
 ///////////////////////////////////////
@@ -367,7 +369,8 @@ di "RR:" %9.4f $RRtmlebg _col(5) "; 95%CI:(" %6.4f $LCIr "," %6.4f $UCIr ")"
 quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
-quietly: rm data.csv 
+quietly: rm data.csv
+quietly: rm .RData 
 end
 
 ////////////////////////////////////
@@ -469,7 +472,8 @@ di "RR:" %9.4f $RRslaipw _col(5) "; 95%CI:(" %6.4f $LCIr "," %6.4f $UCIr ")"
 quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
-quietly: rm data.csv 
+quietly: rm data.csv
+quietly: rm .RData 
 end
 
 ///////////////////////
@@ -571,7 +575,8 @@ di "RR:" %9.4f $RRslaipwgbm _col(5) "; 95%CI:(" %6.4f $LCIr "," %6.4f $UCIr ")"
 quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
-quietly: rm data.csv 
+quietly: rm data.csv
+quietly: rm .RData 
 end
 
 //////////////////////////////
@@ -674,6 +679,7 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv 
+quietly: rm .RData
 end
 
 program aipw
@@ -770,6 +776,7 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv 
+quietly: rm .RData
 end
 
 //program drop eltmle tmle tmlebgam tmlegbm slaipw slaipwgbm slaipwbgam aipw
