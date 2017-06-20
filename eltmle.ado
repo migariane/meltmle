@@ -231,7 +231,7 @@ global RRtmlegbm = $Q1/$Q0
 // Statistical inference ATE and RR
 
 // ATE
-gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmle
+gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmlegbm
 qui: sum IC
 global var = r(Var)
 qui: count
@@ -343,7 +343,7 @@ global RRtmlebg = $Q1/$Q0
 
 // Statistical inference ATE and RR
 // ATE
-gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmle
+gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmlebg
 qui: sum IC
 global var = r(Var)
 qui: count
