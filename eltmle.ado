@@ -9,7 +9,7 @@
 capture program drop eltmle
 program define eltmle
      syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam aipw]
-     version 13.2
+     version 13.3
 	 marksample touse
 	 local var `varlist' if `touse'
      local dir `c(pwd)'
@@ -118,7 +118,7 @@ global RRtmle = $Q1/$Q0
 
 // Statistical inference ATE and RR
 // ATE
-gen double IC = (HAW*(Y - QAW)) + (Q1W - Q0W) - $ATEtmle
+gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmle
 qui: sum IC
 global var = r(Var)
 qui: count
@@ -231,7 +231,7 @@ global RRtmlegbm = $Q1/$Q0
 // Statistical inference ATE and RR
 
 // ATE
-gen double IC = (HAW*(Y - QAW)) + (Q1W - Q0W) - $ATEtmlegbm
+gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmle
 qui: sum IC
 global var = r(Var)
 qui: count
@@ -343,7 +343,7 @@ global RRtmlebg = $Q1/$Q0
 
 // Statistical inference ATE and RR
 // ATE
-gen double IC = (HAW*(Y - QAW)) + (Q1W - Q0W) - $ATEtmlebg
+gen double IC = (HAW*(Y - Qstar)) + (Q1star - Q0star) - $ATEtmle
 qui: sum IC
 global var = r(Var)
 qui: count
