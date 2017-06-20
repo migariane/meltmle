@@ -1,4 +1,4 @@
-*! version 1.7 Ensemble Learning Targeted Maximum Likelihood by MA.LUQUE 05.APRIL.2017
+*! version 1.8 Ensemble Learning Targeted Maximum Likelihood by MA.LUQUE 20.MARCH.2017
 ***************************************************************************
 **MIGUEL ANGEL LUQUE FERNANDEZ
 **TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OUTCOME AND TREATMENT 
@@ -9,7 +9,7 @@
 capture program drop eltmle
 program define eltmle
      syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam aipw]
-     version 13.3
+     version 13.2
 	 marksample touse
 	 local var `varlist' if `touse'
      local dir `c(pwd)'
