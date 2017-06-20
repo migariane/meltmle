@@ -8,7 +8,7 @@
 
 capture program drop eltmle
 program define eltmle
-     syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam aipw]
+     syntax [varlist] [if] [pw] [, slaipw slaipwgbm slaipwbgam tmle tmlegbm tmlebgam]
      version 13.2
 	 marksample touse
 	 local var `varlist' if `touse'
