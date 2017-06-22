@@ -2,9 +2,12 @@
 
 ***************************************************************************
 ** MIGUEL ANGEL LUQUE FERNANDEZ
-** TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OUTCOME AND TREATMENT 
-** Improved AIPW with Super Learner (ensemble learning and machine-learning)
+** mluquefe@hsph.havard.edu // miguel-angel.luque@lshtm.ac.uk
+** TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OR CONTINUOUS 
+** OUTCOME AND TREATMENT 
+** Improved AIPTW with Super Learner (Ensemble Learning and Machine-Learning)
 ** This program requires R to be installed in your computer
+** JUNE 2017
 ****************************************************************************
 
 * Improved IC
