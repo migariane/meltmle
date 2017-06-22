@@ -10,8 +10,8 @@
 ** JUNE 2017
 ****************************************************************************
 
-* Improved IC
-* Improved Display 
+* Improved IC for statistical inference
+* Improved display including potential outcomes and weights to check balance
 * Binary and continuous outcomes 
 
 capture program drop eltmle
@@ -46,7 +46,6 @@ program define eltmle
 		slaipwbgam `varlist'
 	 }
 end 
-
 
 program tmle  
 // Write R Code dependencies: foreign Surperlearner 
