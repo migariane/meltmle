@@ -165,7 +165,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
@@ -293,7 +292,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
@@ -419,7 +417,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
@@ -536,7 +533,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
@@ -653,7 +649,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
@@ -770,7 +765,6 @@ quietly: rm SLS.R
 //quietly: rm SLS.Rout
 quietly: rm data2.dta
 quietly: rm data.csv
-quietly: rm setup.bat
 quietly: rm .RData
 end
 
