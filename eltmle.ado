@@ -319,7 +319,7 @@ qui count
 global n = r(N)
 global varICtmlebg = $var/$n
 
-global pvalue = cond($flag==1,2*(normalden(abs($ATEcibg/sqrt($varICtmlebg)))),2*(normalden(abs($ATEtmlebg/sqrt($varICtmlebg)))),.)
+global pvaluebg = cond($flag==1,2*(normalden(abs($ATEcibg/sqrt($varICtmlebg)))),2*(normalden(abs($ATEtmlebg/sqrt($varICtmlebg)))),.)
 
 global LCIabg =  cond($flag==1,$ATEcibg -1.96*sqrt($varICtmlebg),$ATEtmlebg -1.96*sqrt($varICtmlebg),.)
 global UCIabg =  cond($flag==1,$ATEcibg +1.96*sqrt($varICtmlebg),$ATEtmlebg +1.96*sqrt($varICtmlebg),.)
