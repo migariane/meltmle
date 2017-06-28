@@ -10,11 +10,12 @@
 ** JUNE 2017
 ****************************************************************************
 
-* Improved Imfluence curve estimation for the causal relative risk
+* Improved Influence curve estimation for the causal relative risk
 * Improved display including potential outcomes and weights to check balance
 * Included estimation for continuous outcomes 
 * Added additive causal effects for continuous outcome
 * Fixed risk difference and causal relative risk for SLAIPW and SLAIPWBGAM 
+* Checked consistency of confidence intervals for RR
 
 capture program drop eltmle
 program define eltmle
