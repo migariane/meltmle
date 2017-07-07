@@ -1,9 +1,34 @@
-*! version 2.2
-*! Ensemble Learning Targeted Maximum Likelihood by MA.LUQUE-FERNANDEZ 28.JUNE.2017
+*! version 2.2  30.Jun.2017
+*! ELTMLE: Stata module for Ensemble Learning Targeted Maximum Likelihood Estimation
+*! by Miguel Angel Luque-Fernandez [cre,aut]
+*! Bug reports:
+*! miguel-angel.luque at lshtm.ac.uk
+
+/*
+Copyright (c) 2017  <Miguel Angel Luque-Fernandez>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
 
 ***************************************************************************
 ** MIGUEL ANGEL LUQUE FERNANDEZ
-** mluquefe@hsph.havard.edu // miguel-angel.luque@lshtm.ac.uk
+** mluquefe at hsph.havard.edu // miguel-angel.luque at lshtm.ac.uk
 ** TMLE ALGORITHM IMPLEMENTATION IN STATA FOR BINARY OR CONTINUOUS 
 ** OUTCOME AND BINARY TREATMENT FOR MAC USERS 
 ** Improved AIPTW with Super Learner (Ensemble Learning)
