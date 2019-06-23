@@ -69,4 +69,4 @@ Miguel Angel Luque Fernandez is supported by a Miguel Servet I Investigator Awar
   
 I would like to thank Professors Bianca De Stavola (LSHTM), Simon Cousens (LSHTM), Aurelio Tobias (CSIC), Michel Coleman (LSHTM) for their comments and support and Haghish E. F. (CMBMI, Freiburg, Germany) for his wonderful **Github** and **MarkDoc** Stata packages. 
 
-![Figure Link](https://github.com/migariane/eltmle/blob/master/Acknowledgment.png)   
+![Figure Link](https://github.com/migariane/meltmle/blob/master/Acknowledgment.png)   
