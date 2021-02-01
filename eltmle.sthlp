@@ -1,5 +1,5 @@
 {smcl}
-{right: version 2.2.3 October 15th, 2018}
+{right: version 2.2.6  09.01.2021}
 {...}
 
 {title:Title}
@@ -10,7 +10,7 @@
 {title:Syntax}
 
 {p 4 4 2}
-{cmd:eltmle} {hi: Y} {hi: X} {hi: Z} [{cmd:,} {it:tmle} {it:tmlebgam} {it:tmleglsrf}]
+{cmd:eltmle} {hi: Y} {hi: X} {hi: Z} [{cmd:,} {it:tmle} {it:tmlebgam} {it:tmleglsrf} {it:bal}]
 
 {p 4 4 2}
 where:
@@ -23,7 +23,7 @@ where:
 {hi:X}: Treatment or exposure: numeric binary variable
 {p_end}
 {p 4 4 2}
-{hi:Z}: Covariates: vector of numeric and categorical variables
+{hi:Z}: Covariates: vector of continous and categorical variables
 {p_end}
 
 {title:Description}
@@ -68,12 +68,28 @@ TMLE algorithm plus the super-Learner ensemble learning for the main three machi
 {p 4 4 2 120}
 {hi:tmlebgam}: this option may be specified or unspecified. When specified, it does include in addition to the above default
 implementation, the Bayes Generalized Linear Models and Generalized Additive Models as Super-Learner algorithms for the tmle estimator.
+This option might be suitable for non-linear treatment effects.
 {p_end}
 
 {p 4 4 2 120}
 {hi:tmleglsrf}: this option may be specified or unspecified. When specified, it does include in addition to the three main learning algorithms 
 described above, the Lasso (glmnet R package), Random Forest (randomForest R package) and the Generalized Additive Models as Super-Learner algorithms for the tmle estimator.
+This option might be suitable for heterogeneous treatment effects.
 {p_end}
+
+{p 4 4 2 120}
+{hi:bal}: this option may be specified or unspecified. When specified, it does provide a visual diagnostic check of the positivity assumption based on the estimation of kernel density plots for the propensity score by levels of the treatment.
+{p_end}
+
+
+{title:Resutls}
+
+In addtion to the ATE, the ATE's standard error and p-value, the marginal odds ratio (MOR), and the causal risk ratio (CRR), 
+including their respective type Wald 95%CIs, {hi:eltmle} output provides a descriptive summary for the potential outcomes (POM) and the propensity score (ps):
+{hi: POM1}: Potential outcome among the treated
+{hi: POM0}: Potential outcome among the non-treated
+{hi: ps}: Propensity score 
+
 
 {title:Example}
 
@@ -90,7 +106,7 @@ described above, the Lasso (glmnet R package), Random Forest (randomForest R pac
 .cd "your path"
 
 ******************
-// Binary outcome 
+* Binary outcome 
 ******************
 
 ******************************************************
@@ -99,30 +115,30 @@ described above, the Lasso (glmnet R package), Random Forest (randomForest R pac
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-        POM1 |      4,642    .1023406    .0401616   .0201151   .3747893
-        POM0 |      4,642     .051377    .0251473   .0208754   .1706158
-          PS |      4,642    .1861267     .110755   .0372202   .8494988
-		  
-________________________________
+        POM1 |      4,642    .1019894    .0398481    .020446   .3696461
+        POM0 |      4,642    .0515974    .0251596   .0207218   .1756801
+          ps |      4,642    .1861267    .1113925   .0347833   .8567001
+--------------------------------
 TMLE: Average Treatment Effect
-________________________________
-
-Risk Differences: 0.05; SE: 0.0122; p-value: 0.0001; 95%CI:(0.03, 0.07)
-
-________________________________
+--------------------------------
+ATE:      | 0.0504
+SE:       | 0.0123
+P-value:  | 0.0002
+95%CI:    | 0.0264, 0.0744
+--------------------------------
+-----------------------------
 TMLE: Causal Risk Ratio (CRR)
-________________________________
-
-CRR:  1.99; 95%CI:(1.53, 2.60)
-
-________________________________
+-----------------------------
+CRR: 1.99; 95%CI:(1.52, 2.59)
+-----------------------------
+-------------------------------
 TMLE: Marginal Odds Ratio (MOR)
-________________________________
-
-MOR:  2.11; 95%CI:(1.50, 2.72)
+-------------------------------
+MOR: 2.10; 95%CI:(1.49, 2.71)
+-------------------------------
 
 **********************
-// Continuous outcome 
+* Continuous outcome 
 **********************
 
 ***********************************************************
@@ -131,57 +147,59 @@ MOR:  2.11; 95%CI:(1.50, 2.72)
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-        POM1 |      4,642    2833.081    74.84581   2580.186   2958.981
-        POM0 |      4,642    3062.785    89.55875   2867.102   3166.985
-          PS |      4,642    .1861267     .110755   .0372202   .8494988
-
-________________________________
-TMLE: Additive Causal Effect
-________________________________
-Risk Differences:   -229.70; VAR:  600.9; p-value: 0.0000; 95%CI:(-277.75, -181.66)
-
-________________________________
+        POM1 |      4,642     2832.69     74.9141   2550.819   2968.504
+        POM0 |      4,642    3062.695    91.22898   2844.977   3177.975
+          ps |      4,642    .1861267    .1106222   .0377472   .8479414
+--------------------------------
+TMLE: Average Treatment Effect
+--------------------------------
+ATE:      | -230.0
+SE:       |   24.5
+P-value:  | 0.0000
+95%CI:    | -277.9, -182.1
+--------------------------------
+-----------------------------
 TMLE: Causal Risk Ratio (CRR)
-________________________________
-CRR:   0.93; 95%CI:(0.91, 0.94)
-
-________________________________
+-----------------------------
+CRR: 0.93; 95%CI:(0.91, 0.94)
+-----------------------------
+-------------------------------
 TMLE: Marginal Odds Ratio (MOR)
-________________________________
-MOR:   0.83; 95%CI:(0.80, 0.87)
-
-
-***************************************************************
-// Continuous outcome: preserving original dataset and using 
-// more advance machine learning techniques
-***************************************************************
+-------------------------------
+MOR: 0.83; 95%CI:(0.80, 0.87)
+-------------------------------
 
 ***************************************************************
-preserve
-eltmle bweight mbsmoke mage medu prenatal mmarried, tmleglsrf
-restore
+// Using more advance machine learning techniques
 ***************************************************************
-   Variable |        Obs        Mean    Std. Dev.       Min        Max
-------------+---------------------------------------------------------
-       POM1 |      4,642    2834.267    74.94768   2582.177   2964.985
-       POM0 |      4,642    3063.768    89.56743   2867.587   3168.283
-         PS |      4,642     .154641    .1111959       .025   .6236143
 
+***************************************************************
+.eltmle lbw mbsmoke mage medu prenatal mmarried, tmleglsrf
+***************************************************************
 
-________________________________
-TMLE: Additive Causal Effect
-________________________________
-Risk Differences:  -229.50; VAR:  907.5; p-value: 0.0000; 95%CI:(-288.55, -170.46)
-
-________________________________
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        POM1 |      4,642    .0869585    .0395922   .0204686   .4106772
+        POM0 |      4,642    .0432076    .0226041   .0180801   .2208142
+          ps |      4,642    .1571824    .1109491       .025   .6221823
+--------------------------------
+TMLE: Average Treatment Effect
+--------------------------------
+ATE:      | 0.0438
+SE:       | 0.0142
+P-value:  | 0.0070
+95%CI:    | 0.0159, 0.0716
+--------------------------------
+-----------------------------
 TMLE: Causal Risk Ratio (CRR)
-________________________________
-CRR:   0.93; 95%CI:(0.91, 0.94)
-
-________________________________
+-----------------------------
+CRR: 1.77; 95%CI:(1.27, 2.49)
+-----------------------------
+-------------------------------
 TMLE: Marginal Odds Ratio (MOR)
-________________________________
-MOR:   0.83; 95%CI:(0.80, 0.87)
+-------------------------------
+MOR: 1.85; 95%CI:(1.17, 2.53)
+-------------------------------
 
 **********************************************************************************************
 
@@ -214,21 +232,41 @@ at the following path: {hi:"C:\Program Files\R\R-X.X.X\bin\x64\R.exe"}. In case 
 is located in the above highlighted path users would like to keep the latest.
 {p_end}
 
-{p 4 4 2 120}
-Remember 6: In case you want to preserve the original dataset you can use the 
-preserve restore Stata functionality in combination to the Stata {hi: eltmle} command as shown in the previous example.
-{p_end}
+
+{title:Stored results}
+
+eltmle stores the following in {hi: r()}:
+
+Scalars
+
+	{hi: r(SE_log_MOR)}          Standard error marginal odds ratio
+               {hi: r(MOR)} 		Marginal odds ratio
+        {hi: r(SE_log_CRR)} 		Standard error causal risk ratio
+        {hi:        r(CRR)} 		Causal risk ratio
+        {hi:   r(ATE_UCIa)} 		Risk difference upper 95%CI 
+        {hi:   r(ATE_LCIa)} 		Risk difference lower 95%CI
+        {hi: r(ATE_pvalue)} 		Risk difference pvalue
+        {hi: (ATE_SE_tmle)} 		Standard error Risk difference
+        {hi:    r(ATEtmle)} 		Risk difference
+		
+{title:Version in development: updates}		
+
+{browse "https://github.com/migariane/eltmle/tree/master": https://github.com/migariane/eltmle/tree/master}
 
 {title:References}
-
+	
 {p 4 4 2 120}
 Miguel Angel Luque‐Fernandez, M Schomaker, B Rachet, M Schnitzer (2018). Targeted maximum likelihood estimation for a binary treatment: A tutorial.
-Statistics in medicine. {browse "https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.7628":Download here}.
+Statistics in medicine. {browse "https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.7628":link}.
 {p_end}
 
 {p 4 4 2 120}
 Miguel Angel Luque-Fernandez (2017). Targeted Maximum Likelihood Estimation for a
-Binary Outcome: Tutorial and Guided Implementation {browse "http://migariane.github.io/TMLE.nb.html":Download here}.
+Binary Outcome: Tutorial and Guided Implementation {browse "http://migariane.github.io/TMLE.nb.html":link}.
+{p_end}
+
+{p 4 4 2 120}
+Matthew James Smith, Camille Maringe, Bernard Rachet, Mohammad A. Mansournia, Paul Zivich, Stephen R. Cole, Miguel Angel Luque Fernandez (2021).  Tutorial: Introduction to computational causal inference for applied researchers and epidemiologists {browse "https://github.com/migariane/TutorialCausalInferenceEstimators":link}.
 {p_end}
 
 {p 4 4 2 120}
@@ -262,5 +300,5 @@ London, UK.{p_end}
 {title:Also see}
 
 {psee}
-Online:  {helpb teffects}
+Online:  {help teffects}
 {p_end}
