@@ -133,7 +133,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
 		`"ps[ps>0.975] <- 0.975"' _newline ///
@@ -355,7 +355,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
         `"ps[ps>0.975] <- 0.975"' _newline ///
@@ -580,7 +580,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
         `"ps[ps>0.975] <- 0.975"' _newline ///
@@ -803,7 +803,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
         `"ps[ps>0.975] <- 0.975"' _newline ///
@@ -1035,7 +1035,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
         `"ps[ps>0.975] <- 0.975"' _newline ///
@@ -1258,7 +1258,7 @@ qui: file write rcode ///
         `"QAW <- Q[1:n,]"' _newline ///
         `"Q1W <- Q[((n+1):(2*n)),]"' _newline ///
         `"Q0W <- Q[((2*n+1):(3*n)),]"' _newline ///
-        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = W, SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
+        `"g <- suppressWarnings(SuperLearner(Y = data[,2], X = as.data.frame(W), SL.library = SL.library, family = "binomial", method = "method.NNLS"))"' _newline ///
         `"ps <- g[[4]]"' _newline ///
         `"ps[ps<0.025] <- 0.025"' _newline ///
         `"ps[ps>0.975] <- 0.975"' _newline ///
