@@ -1,5 +1,5 @@
 {smcl}
-{right: version 2.2.6  09.01.2021}
+{right: version 2.2.7  13.07.2022}
 {...}
 
 {title:Title}
@@ -231,7 +231,6 @@ See the example here below using the sys auto data:
 		.drop _mi_miss rep78
 		.rename _1_rep78 rep78
 		.eltmle price foreign rep78 weight length, tmle
-
 
 {p 4 4 2 120}
 Remember 4: Mac users must have installed R software on their personal computer as
